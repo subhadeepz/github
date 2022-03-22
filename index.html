@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gitHub</title>
+</head>
+<body>
+  
+    <label for="fname">Branch Name : </label>
+    <input type="text" id="bName" name="bName"><br><br>
+    <label for="lname">Comment : </label>
+    <input type="text" id="comment" name="comment"><br><br>
+    <input type="button" onclick="myFunction()" value="Submit form">
+    <div id="command"></div>
+
+    <script>
+      function myFunction() {
+        let a = document.getElementById("bName").value
+        let b = document.getElementById("comment").value;
+        let command = 
+        "git status"+
+        "<br />"+
+        "git stash"+
+        "<br />"+
+        "git checkout development"+
+        "<br />"+
+        "git pull origin development"+
+        "<br />"+
+        "git fetch"+
+        "<br />"+
+        "git checkout "+a+
+        "<br />"+
+        "git rebase development"+
+        "<br />"+
+        "git stash pop"+
+        "<br />"+
+        "git status"+
+        "<br />"+
+        "git commit -m '"+b+"'"+
+        "<br />"+
+        "git push origin "+a+
+        "<br />"
+        document.getElementById("command").innerHTML=command
+      }
+      </script>
+</body>
+</html>
